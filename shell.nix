@@ -30,7 +30,7 @@ let
     libxml2
     curl
     libiconv
-    elixir_1_9
+    elixir_1_11
     glibcLocales
     nodejs-12_x
     yarn
@@ -40,6 +40,7 @@ let
     selenium-server-standalone
     geckodriver
     nginx
+    redis
   ];
 
   inputs = basePackages

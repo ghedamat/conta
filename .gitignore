@@ -25,3 +25,8 @@ conta-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+.nix-hex/
+.nix-mix/
+
+.env

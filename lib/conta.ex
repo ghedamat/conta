@@ -13,6 +13,12 @@ defmodule Conta do
 
   """
   def hello do
-    :world
+    Task.async(fn ->
+      :poolboy.transaction(
+        :worker,
+        fn pid -> GenServer.call(pid, {:square_root, 2}) end,
+        3000
+      )
+    end)
   end
 end

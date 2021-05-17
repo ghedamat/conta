@@ -8,8 +8,6 @@ defmodule Conta.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Conta.Worker.start_link(arg)
-      # {Conta.Worker, arg}
       {Plug.Cowboy, scheme: :http, plug: Conta.Router, port: port()},
       Conta.Redis
     ]

@@ -34,6 +34,8 @@ COPY mix.exs mix.lock ./
 RUN mix deps.get --only prod && \
     mix deps.compile
 
+COPY lib lib
+COPY priv priv
 
 # compile and build release
 RUN mix do compile, release
@@ -57,7 +59,7 @@ COPY --from=build --chown=nobody:nobody /app/_build/prod/rel/conta ./
 ENV HOME=/app
 ENV MIX_ENV=prod
 ENV SECRET_KEY_BASE=nokey
-ENV PORT=4000
+ENV PORT=8080
 
 CMD ["bin/conta", "start"]
 

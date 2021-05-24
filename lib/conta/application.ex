@@ -20,7 +20,7 @@ defmodule Conta.Application do
 
   def port do
     {port, _} =
-      (System.get_env("PORT") || Application.get_env(:url_shortener, :port) || "5000")
+      (System.get_env("PORT") || Application.get_env(:url_shortener, :port) || "8080")
       |> Integer.parse()
 
     port

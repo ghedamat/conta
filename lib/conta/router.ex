@@ -5,7 +5,8 @@ defmodule Conta.Router do
 
   match _ do
     # TODO cache image payload in memory
-    {:ok, resp} = File.read("public/1x1.png")
+    app_dir = Application.app_dir(:conta, "priv")
+    {:ok, resp} = File.read("#{app_dir}/1x1.png")
 
     path = conn.request_path
 

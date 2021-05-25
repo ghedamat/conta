@@ -11,10 +11,10 @@ defmodule Conta.Router do
     path = conn.request_path
 
     set = "VISITS:#{path}"
-    # key = Date.utc_today() |> Date.to_string()
+    key = Date.utc_today() |> Date.to_string()
 
     IO.inspect(set)
-    # Conta.Redis.command(["HINCRBY", set, key, 1])
+    Conta.Redis.command(["HINCRBY", set, key, 1])
 
     conn
     |> put_resp_content_type("image/png")
